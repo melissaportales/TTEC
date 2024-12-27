@@ -3,34 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MP Multi - TTEC BU</title>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap" rel="stylesheet" />
-</head>
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' chrome-extension://d554527a-bc81-4d8c-81a4-fabe92683d71;">
+  <title>MP Simple - TTEC BU</title>
+  <style>
+    body {
+        display: flex;
+        flex-direction: column; /* Stack header and table vertically */
+        justify-content: center; /* Center vertically */
+        align-items: center; /* Center horizontally */
+        margin: 0; /* Remove default margin */
+        height: 100vh; /* Full viewport height */
+    }
+    header {
+        text-align: center; /* Center align text inside the header */
+        margin-bottom: 20px; /* Add space between header and table */
+    }
+    table {
+        border: 1px solid #000;
+        border-collapse: collapse;
+    }
+    table td, table th {
+        border: 1px solid #000;
+        padding: 8px;
+    }
+  </style>
+ 
 <script>
-  (function (n, u) {
-    window.CXoneDfo = n,
-    window[n] = window[n] || function () {
-      (window[n].q = window[n].q || []).push(arguments)
-    },
-    window[n].u = u,
-    e = document.createElement("script"),
-    e.type = "module",
-    e.src = u + "?" + Math.round(Date.now() / 1e3 / 3600),
-    document.head.appendChild(e);
-  })('cxone', 'https://web-modules-de-na1.niceincontact.com/loader/1/loader.js');
+	(function (n, u) {
+	window.CXoneDfo = n,
+	window[n] = window[n] || function () {
+	(window[n].q = window[n].q || []).push(arguments)
+	},
+	window[n].u = u,
+	e = document.createElement("script"),
+	e.type = "module",
+	e.src = u + "?" + Math.round(Date.now() / 1e3 / 3600),
+	document.head.appendChild(e);
+	})('cxone', 'https://web-modules-de-na1.niceincontact.com/loader/1/loader.js');
 
-  cxone('init', '5066');
-  cxone('guide', 'init', '5c2c040f-d89f-4ca3-8f15-d71d3ea8d7d4');
-  cxone('guide', 'setButtonSize', '80px');
+	cxone('init', '5066');
+	cxone('guide', 'init', '5c2c040f-d89f-4ca3-8f15-d71d3ea8d7d4');
+	cxone('guide', 'setButtonSize', '80px');
 </script>
+</head>
+
 <body>
   <header>
-    <h1 style="text-align: center">TTEC BU</h1>
-    <h4 style="text-align: center">Test your chat in the bottom right-hand corner!</h4>
+    <h1>TTEC BU</h1>
+    <h4>Test your chat in the bottom right-hand corner!</h4>
   </header>
-  <section class="channelInfo">
+  <section>
     <h2>Channel Information</h2>
-    <div class="table-block">
+    <div>
       <table id="table">
         <tr>
           <td id="tableName">Business Unit:</td>
@@ -48,24 +72,32 @@
           <td id="tableName">CXone Instance / Region:</td>
           <td id="tableValue">NA1</td>
         </tr>
+        <tr>
+          <td id="tableName">Channel Name:</td>
+          <td id="tableValue">MP Simple</td>
+        </tr>
+        <tr>
+          <td id="tableName">Routing Queue:</td>
+          <td id="tableValue">MP - Digital Demo</td>
+        </tr>
+        <tr>
+          <td id="tableName">Precontact Survey:</td>
+          <td id="tableValue">MP - Digital Live Chat Demo</td>
+        </tr>
+        <tr>
+          <td id="tableName">Skill ID:</td>
+          <td id="tableValue">25174123</td>
+        </tr>
+        <tr>
+          <td id="tableName">Script:</td>
+          <td id="tableValue">N/A</td>
+        </tr>
+        <tr>
+          <td id="tableName">Customer Contact Form:</td>
+          <td id="tableValue">MP - Digital Demos</td>
+        </tr>
       </table>
     </div>
-    
   </section>
-  <script>
-    function copyToClipboard() {
-      const codeContent = document.getElementById('codeBlockContent').innerText;
-      navigator.clipboard.writeText(codeContent).then(() => {
-        const button = document.querySelector('.copy-button');
-        const originalText = button.innerText;
-        button.innerText = 'Copied!';
-        setTimeout(() => {
-          button.innerText = originalText;
-        }, 2000);
-      }).catch(err => {
-        console.error('Error copying text:', err);
-      });
-    }
-  </script>
 </body>
 </html>
