@@ -1,96 +1,115 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' chrome-extension://d554527a-bc81-4d8c-81a4-fabe92683d71;">
-  <title>MP Simple - TTEC BU</title>
-  <style>
-    body {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MP Simple - TTEC BU</title>
+    <style>
+      body {
         display: flex;
         flex-direction: column; /* Stack header and table vertically */
         justify-content: center; /* Center vertically */
         align-items: center; /* Center horizontally */
         margin: 0; /* Remove default margin */
         height: 100vh; /* Full viewport height */
-    }
-    header {
+      }
+      header {
         text-align: center; /* Center align text inside the header */
         margin-bottom: 20px; /* Add space between header and table */
-    }
-    table {
+      }
+      table {
         border: 1px solid #000;
         border-collapse: collapse;
-    }
-    table td, table th {
+      }
+      table td,
+      table th {
         border: 1px solid #000;
         padding: 8px;
-    }
-</style>
-	<script>
-	(function(n,u){
-	window.CXoneDfo=n,
-	window[n]=window[n]||function(){(window[n].q=window[n].q||[]).push(arguments)},window[n].u=u,
-	e=document.createElement("script"),e.type="module",e.src=u+"?"+Math.round(Date.now()/1e3/3600),
-	document.head.appendChild(e)
-	})('cxone','https://web-modules-de-na1.niceincontact.com/loader/1/loader.js');
-	
-	cxone('init', '5066');
-	cxone('guide', 'init', 'b0e2e6b9-74ec-4fce-ab0b-dcdd2f3765fb');
-	cxone('guide', 'setButtonSize', '80px');
-	</script>
-</head>
-<body>
-  <header>
-    <h1>TTEC BU</h1>
-    <h4>Test your chat in the bottom right-hand corner!</h4>
-  </header>
-  <section>
-    <h2>Channel Information</h2>
-    <div>
-      <table id="table">
-        <tr>
-          <td id="tableName">Business Unit:</td>
-          <td id="tableValue">4609152</td>
-        </tr>
-        <tr>
-          <td id="tableName">Tenant ID:</td>
-          <td id="tableValue">5066</td>
-        </tr>
-        <tr>
-          <td id="tableName">CXone Cluster:</td>
-          <td id="tableValue">B32</td>
-        </tr>
-        <tr>
-          <td id="tableName">CXone Instance / Region:</td>
-          <td id="tableValue">NA1</td>
-        </tr>
-        <tr>
-          <td id="tableName">Channel Name:</td>
-          <td id="tableValue">MP Simple</td>
-        </tr>
-        <tr>
-          <td id="tableName">Routing Queue:</td>
-          <td id="tableValue">MP - Digital Demo</td>
-        </tr>
-        <tr>
-          <td id="tableName">Precontact Survey:</td>
-          <td id="tableValue">MP - Digital Live Chat Demo</td>
-        </tr>
-        <tr>
-          <td id="tableName">Skill ID:</td>
-          <td id="tableValue">25174123</td>
-        </tr>
-        <tr>
-          <td id="tableName">Script:</td>
-          <td id="tableValue">N/A</td>
-        </tr>
-        <tr>
-          <td id="tableName">Customer Contact Form:</td>
-          <td id="tableValue">MP - Digital Demos</td>
-        </tr>
-      </table>
-    </div>
-  </section>
-</body>
+      }
+    </style>
+    <script>
+      (function (n, u) {
+      window.CXoneDfo = n,
+      window[n] = window[n] || function () {
+      (window[n].q = window[n].q || []).push(arguments)
+      },
+      window[n].u = u,
+      e = document.createElement("script"),
+      e.type = "module",
+      e.src = u + "?" + Math.round(Date.now() / 1e3 / 3600),
+      document.head.appendChild(e);
+      })('cxone', 'https://web-modules-de-na1.niceincontact.com/loader/1/loader.js');
+
+      cxone('init', '5066');
+      cxone('guide', 'init', 'b0e2e6b9-74ec-4fce-ab0b-dcdd2f3765fb');
+
+    // this will add a background-color to the button
+    cxone('guide', 'setCustomCss', '[data-selector="GUIDE_CHANNEL_BUTTON"] {background: #154c79 !important;} [data-selector="GUIDE_CHANNEL_BUTTON_LABEL"] { padding: 5px 0px 5px 10px !important; }');
+
+    // this will replace the image shown to customers
+      cxone('chat', 'setAgentImage', 'https://home-b32.nice-incontact.com/inContact/Manage/FileManager/FileDownload.aspx?FileSystem=UCN&busNo=4609152&Guid=87e77f8c-e74a-48ff-b8dd-f5614ca5b923&fileName=Images%5cttecLogo_91x68.png&FileId=865680&isFileInFS=True');
+
+      // pre- chat form custom case fields
+      console.log('Setting customer name...');
+      cxone('chat', 'setCustomerName', 'Lisa');
+      console.log('Setting email field...');
+      cxone('chat', 'setCaseCustomField', 'email', 'melissa.portales@ttecdigital.com');
+      console.log('Setting phone number field...');
+      cxone('chat', 'setCaseCustomField', 'phonenumber', '713-555-1212');
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h1>TTEC BU</h1>
+      <h4>Test your chat in the bottom right-hand corner!</h4>
+    </header>
+    <section>
+      <h2>Channel Information</h2>
+      <div>
+        <table id="table">
+          <tr>
+            <td id="tableName">Business Unit:</td>
+            <td id="tableValue">4609152</td>
+          </tr>
+          <tr>
+            <td id="tableName">Tenant ID:</td>
+            <td id="tableValue">5066</td>
+          </tr>
+          <tr>
+            <td id="tableName">CXone Cluster:</td>
+            <td id="tableValue">B32</td>
+          </tr>
+          <tr>
+            <td id="tableName">CXone Instance / Region:</td>
+            <td id="tableValue">NA1</td>
+          </tr>
+          <tr>
+            <td id="tableName">Channel Name:</td>
+            <td id="tableValue">MP Simple</td>
+          </tr>
+          <tr>
+            <td id="tableName">Routing Queue:</td>
+            <td id="tableValue">MP - Digital Demo</td>
+          </tr>
+          <tr>
+            <td id="tableName">Precontact Survey:</td>
+            <td id="tableValue">MP - Digital Live Chat Demo</td>
+          </tr>
+          <tr>
+            <td id="tableName">Skill ID:</td>
+            <td id="tableValue">25174123</td>
+          </tr>
+          <tr>
+            <td id="tableName">Script:</td>
+            <td id="tableValue">N/A</td>
+          </tr>
+          <tr>
+            <td id="tableName">Customer Contact Form:</td>
+            <td id="tableValue">MP - Digital Demos</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+  </body>
 </html>
