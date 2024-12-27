@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MP Multi - TTEC BU</title>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<script>
+  (function (n, u) {
+    window.CXoneDfo = n,
+    window[n] = window[n] || function () {
+      (window[n].q = window[n].q || []).push(arguments)
+    },
+    window[n].u = u,
+    e = document.createElement("script"),
+    e.type = "module",
+    e.src = u + "?" + Math.round(Date.now() / 1e3 / 3600),
+    document.head.appendChild(e);
+  })('cxone', 'https://web-modules-de-na1.niceincontact.com/loader/1/loader.js');
+
+  cxone('init', '5066');
+  cxone('guide', 'init', '5c2c040f-d89f-4ca3-8f15-d71d3ea8d7d4');
+  //cxone('guide','hidePreSurvey', 'Future Customer');
+  
+</script>
+<body>
+  <header>
+    <h1 style="text-align: center">TTEC BU</h1>
+    <h4 style="text-align: center">Test your chat in the bottom right-hand corner!</h4>
+  </header>
+  <section class="channelInfo">
+    <h2>Channel Information</h2>
+    <div class="table-block">
+      <table id="table">
+        <tr>
+          <td id="tableName">Business Unit:</td>
+          <td id="tableValue">4609152</td>
+        </tr>
+        <tr>
+          <td id="tableName">Tenant ID:</td>
+          <td id="tableValue">5066</td>
+        </tr>
+        <tr>
+          <td id="tableName">CXone Cluster:</td>
+          <td id="tableValue">B32</td>
+        </tr>
+        <tr>
+          <td id="tableName">CXone Instance / Region:</td>
+          <td id="tableValue">NA1</td>
+        </tr>
+      </table>
+    </div>
+    
+  </section>
+  <script>
+    function copyToClipboard() {
+      const codeContent = document.getElementById('codeBlockContent').innerText;
+      navigator.clipboard.writeText(codeContent).then(() => {
+        const button = document.querySelector('.copy-button');
+        const originalText = button.innerText;
+        button.innerText = 'Copied!';
+        setTimeout(() => {
+          button.innerText = originalText;
+        }, 2000);
+      }).catch(err => {
+        console.error('Error copying text:', err);
+      });
+    }
+  </script>
+</body>
+</html>
